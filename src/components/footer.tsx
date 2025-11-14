@@ -7,27 +7,7 @@ import { Logo } from './logo'
 import { Subheading } from './text'
 
 function CallToAction() {
-  return (
-    <div className="relative pt-20 pb-16 text-center sm:py-24">
-      <hgroup>
-        <Subheading>Get started</Subheading>
-        <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-          Ready to dive in?
-          <br />
-          Start your free trial today.
-        </p>
-      </hgroup>
-      <p className="mx-auto mt-6 max-w-xs text-sm/6 text-gray-500">
-        Get the cheat codes for selling and unlock your team&apos;s revenue
-        potential.
-      </p>
-      <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="#">
-          Get started
-        </Button>
-      </div>
-    </div>
-  )
+  return null
 }
 
 function SitemapHeading({ children }: { children: React.ReactNode }) {
@@ -53,33 +33,33 @@ function Sitemap() {
   return (
     <>
       <div>
-        <SitemapHeading>Product</SitemapHeading>
+        <SitemapHeading>Produto</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/pricing">Pricing</SitemapLink>
-          <SitemapLink href="#">Analysis</SitemapLink>
-          <SitemapLink href="#">API</SitemapLink>
+          <SitemapLink href="#features">Recursos</SitemapLink>
+          <SitemapLink href="#how-it-works">Como Funciona</SitemapLink>
+          <SitemapLink href="#demo">Demo</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        <SitemapHeading>Company</SitemapHeading>
+        <SitemapHeading>Projeto</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="#">Careers</SitemapLink>
-          <SitemapLink href="/blog">Blog</SitemapLink>
-          <SitemapLink href="/company">Company</SitemapLink>
+          <SitemapLink href="https://github.com/mellobirkan/a11y-lint">GitHub</SitemapLink>
+          <SitemapLink href="https://github.com/mellobirkan/a11y-lint#readme">Documentação</SitemapLink>
+          <SitemapLink href="https://github.com/mellobirkan/project_a11y_lint">Repositório do Código</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        <SitemapHeading>Support</SitemapHeading>
+        <SitemapHeading>TCC</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="#">Help center</SitemapLink>
-          <SitemapLink href="#">Community</SitemapLink>
+          <SitemapLink href="#">Artigo Científico</SitemapLink>
+          <SitemapLink href="#">Sobre o Projeto</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
-        <SitemapHeading>Company</SitemapHeading>
+        <SitemapHeading>Contato</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="#">Terms of service</SitemapLink>
-          <SitemapLink href="#">Privacy policy</SitemapLink>
+          <SitemapLink href="https://github.com/mellobirkan">GitHub Profile</SitemapLink>
+          <SitemapLink href="https://linkedin.com/in/mellobirkan">LinkedIn</SitemapLink>
         </SitemapLinks>
       </div>
     </>
@@ -114,29 +94,29 @@ function SocialIconLinkedIn(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+function SocialIconGitHub(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+    </svg>
+  )
+}
+
 function SocialLinks() {
   return (
     <>
       <Link
-        href="https://facebook.com"
+        href="https://github.com/mellobirkan/a11y-lint"
         target="_blank"
-        aria-label="Visit us on Facebook"
+        aria-label="Visite nosso GitHub"
         className="text-gray-950 data-hover:text-gray-950/75"
       >
-        <SocialIconFacebook className="size-4" />
+        <SocialIconGitHub className="size-4" />
       </Link>
       <Link
-        href="https://x.com"
+        href="https://linkedin.com/in/mellobirkan"
         target="_blank"
-        aria-label="Visit us on X"
-        className="text-gray-950 data-hover:text-gray-950/75"
-      >
-        <SocialIconX className="size-4" />
-      </Link>
-      <Link
-        href="https://linkedin.com"
-        target="_blank"
-        aria-label="Visit us on LinkedIn"
+        aria-label="Visite nosso LinkedIn"
         className="text-gray-950 data-hover:text-gray-950/75"
       >
         <SocialIconLinkedIn className="size-4" />
@@ -148,7 +128,7 @@ function SocialLinks() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} Radiant Inc.
+      &copy; {new Date().getFullYear()} a11y-lint • Projeto TCC • Open Source
     </div>
   )
 }

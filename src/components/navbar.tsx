@@ -12,10 +12,10 @@ import { Logo } from './logo'
 import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
-  { href: '/pricing', label: 'Pricing' },
-  { href: '/company', label: 'Company' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/login', label: 'Login' },
+  { href: '#features', label: 'Recursos' },
+  { href: '#how-it-works', label: 'Como Funciona' },
+  { href: '#demo', label: 'Demo' },
+  { href: 'https://github.com/mellobirkan/a11y-lint', label: 'GitHub' },
 ]
 
 function DesktopNav() {
