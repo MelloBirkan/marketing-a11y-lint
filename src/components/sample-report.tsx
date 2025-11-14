@@ -105,7 +105,7 @@ export function SampleReport() {
                       <div>
                         <p className="text-xs font-medium text-purple-900">Prompt para IA:</p>
                         <p className="mt-1 text-xs text-purple-700">
-                          "Adicione o atributo alt descritivo à imagem em {issue.file}:{issue.line}"
+                          &quot;Adicione o atributo alt descritivo à imagem em {issue.file}:{issue.line}&quot;
                         </p>
                       </div>
                     </div>

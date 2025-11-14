@@ -22,7 +22,7 @@ export default function RootLayout({
           href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&amp;display=swap"
         />
       </head>
-      <body className="text-gray-950 antialiased">
+      <body className="antialiased" style={{ color: '#211F22', backgroundColor: '#FAF4F3' }}>
         {children}
       </body>
     </html>

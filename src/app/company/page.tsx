@@ -339,7 +339,7 @@ function Testimonial() {
         <figcaption className="mt-6 border-t border-white/20 pt-6">
           <p className="text-sm/6 font-medium text-white">Veronica Winton</p>
           <p className="text-sm/6 font-medium">
-            <span className="bg-linear-to-r from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#CC7B08] from-28% via-[#E14775] via-70% to-[#7058BE] bg-clip-text text-transparent">
               CSO, Planeteria
             </span>
           </p>
