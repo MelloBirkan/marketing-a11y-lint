@@ -13,7 +13,7 @@ import {
 interface AgentCardProps {
   title: string
   description: string
-  Icon: any
+  Icon: React.ElementType
   color: string
   delay: number
   className?: string

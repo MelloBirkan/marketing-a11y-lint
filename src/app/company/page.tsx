@@ -28,7 +28,7 @@ function Header() {
             At A11Y-Lint, we are dedicated to transforming the way revenue
             organizations source and close deals. Our mission is to provide our
             customers with an unfair advantage over both their competitors and
-            potential customers through insight and analysis. We'll stop at
+            potential customers through insight and analysis. We&apos;ll stop at
             nothing to get you the data you need to close a deal.
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">

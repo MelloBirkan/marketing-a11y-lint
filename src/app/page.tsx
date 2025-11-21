@@ -3,6 +3,7 @@ import { Button } from '@/components/button'
 import { CodeExample } from '@/components/code-example'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
+import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/plus-grid'
 import { MetricsCards } from '@/components/metrics-cards'
 import { Navbar } from '@/components/navbar'
 import { SampleReport } from '@/components/sample-report'
@@ -18,6 +19,8 @@ import {
   BoltIcon,
   CheckCircleIcon,
   MagnifyingGlassIcon,
+  DocumentTextIcon,
+  PresentationChartBarIcon,
 } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 
@@ -83,397 +86,471 @@ function Hero() {
 
 function ProblemSection() {
   return (
-    <div className="overflow-hidden">
-      <Container className="pb-24">
-        <Subheading>O Problema</Subheading>
-        <Heading as="h2" className="mt-2 max-w-3xl">
-          <span style={{
-            background: 'linear-gradient(135deg, #211F22, #7058BE, #211F22)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}>
-            97% dos sites têm erros de acessibilidade
-          </span>
-        </Heading>
-        <p className="mt-6 max-w-3xl text-xl/8" style={{ color: '#211F22', opacity: 0.75 }}>
-          Ferramentas tradicionais detectam apenas <strong style={{ color: '#E14775' }}>31,3%</strong> dos problemas em aplicações mobile e falham na validação semântica. Desenvolvedores enfrentam sobrecarga cognitiva gerenciando múltiplas diretrizes: WCAG 2.2, Apple HIG, WAI-ARIA.
-        </p>
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
-          <StatCard
-            value={2.5}
-            suffix="B+"
-            label="Impacto Global"
-            description="Pessoas dependem de tecnologias assistivas"
-            color="#7058BE"
-            delay={0}
-          />
-          <StatCard
-            value={31.3}
-            suffix="%"
-            label="Cobertura Limitada"
-            description="Cobertura de ferramentas tradicionais"
-            color="#E14775"
-            delay={0.2}
-          />
-          <StatCard
-            value={97}
-            suffix="%"
-            label="Problema Universal"
-            description="Sites com erros de acessibilidade"
-            color="#E16132"
-            delay={0.4}
-          />
-        </div>
-      </Container>
-    </div>
+    <PlusGridRow className="relative">
+      <PlusGridItem className="py-20 sm:py-24">
+        <Container>
+          <Subheading>O Problema</Subheading>
+          <Heading as="h2" className="mt-2 max-w-3xl">
+            <span style={{
+              background: 'linear-gradient(135deg, #211F22, #7058BE, #211F22)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}>
+              97% dos sites têm erros de acessibilidade
+            </span>
+          </Heading>
+          <p className="mt-6 max-w-3xl text-xl/8" style={{ color: '#211F22', opacity: 0.75 }}>
+            Ferramentas tradicionais detectam apenas <strong style={{ color: '#E14775' }}>31,3%</strong> dos problemas em aplicações mobile e falham na validação semântica. Desenvolvedores enfrentam sobrecarga cognitiva gerenciando múltiplas diretrizes: WCAG 2.2, Apple HIG, WAI-ARIA.
+          </p>
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
+            <StatCard
+              value={2.5}
+              suffix="B+"
+              label="Impacto Global"
+              description="Pessoas dependem de tecnologias assistivas"
+              color="#7058BE"
+              delay={0}
+            />
+            <StatCard
+              value={31.3}
+              suffix="%"
+              label="Cobertura Limitada"
+              description="Cobertura de ferramentas tradicionais"
+              color="#E14775"
+              delay={0.2}
+            />
+            <StatCard
+              value={97}
+              suffix="%"
+              label="Problema Universal"
+              description="Sites com erros de acessibilidade"
+              color="#E16132"
+              delay={0.4}
+            />
+          </div>
+        </Container>
+      </PlusGridItem>
+    </PlusGridRow>
   )
 }
 
 function BentoSection() {
   return (
-    <Container id="features">
-      <Subheading>Recursos</Subheading>
-      <Heading as="h3" className="mt-2 max-w-3xl">
-        A única ferramenta que cobre{' '}
-        <span style={{
-          background: 'linear-gradient(135deg, #7058BE, #1F8CA8)',
-          backgroundClip: 'text',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-        }}>
-          Web e Mobile com IA
-        </span>
-      </Heading>
+    <PlusGridRow className="relative">
+      <PlusGridItem className="py-20 sm:py-24">
+        <Container id="features">
+          <Subheading>Recursos</Subheading>
+          <Heading as="h3" className="mt-2 max-w-3xl">
+            A única ferramenta que cobre{' '}
+            <span style={{
+              background: 'linear-gradient(135deg, #7058BE, #1F8CA8)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}>
+              Web e Mobile com IA
+            </span>
+          </Heading>
 
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-4">
-        <EnhancedBentoCard
-          eyebrow="Multi-plataforma"
-          title="Análise Cross-Platform"
-          description="Analise HTML, React e SwiftUI em uma única ferramenta. A única solução que cobre Web e Mobile com validação semântica profunda."
-          iconName="device-phone-mobile"
-          className="md:col-span-2"
-          delay={0}
-        />
-        <EnhancedBentoCard
-          eyebrow="Validação Inteligente"
-          title="Semântica Avançada"
-          description="Detecta problemas de contexto que ferramentas tradicionais ignoram. Entende o significado, não apenas a estrutura do código."
-          iconName="sparkles"
-          className="md:col-span-2"
-          delay={0.1}
-        />
-        <EnhancedBentoCard
-          eyebrow="IA-Nativo"
-          title="Integração com Cursor"
-          description="Gera prompts otimizados para correção instantânea. Copy-paste direto no seu editor favorito."
-          iconName="cpu-chip"
-          delay={0.2}
-        />
-        <EnhancedBentoCard
-          eyebrow="Multi-Agente"
-          title="Sistema com RAG"
-          description="Agentes especializados com citações WCAG verificáveis. Orquestrador + workers."
-          iconName="flag"
-          delay={0.3}
-        />
-        <EnhancedBentoCard
-          eyebrow="Performance"
-          title="Análise Rápida"
-          description="Escaneie projetos inteiros em minutos. Pipeline otimizado para velocidade."
-          iconName="bolt"
-          delay={0.4}
-        />
-        <EnhancedBentoCard
-          eyebrow="Open Source"
-          title="Comunidade Ativa"
-          description="Código aberto no GitHub. Contribuições e feedback são bem-vindos."
-          iconName="heart"
-          delay={0.5}
-        />
-      </div>
-    </Container>
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-4">
+            <EnhancedBentoCard
+              eyebrow="Multi-plataforma"
+              title="Análise Cross-Platform"
+              description="Analise HTML, React e SwiftUI em uma única ferramenta. A única solução que cobre Web e Mobile com validação semântica profunda."
+              iconName="device-phone-mobile"
+              className="md:col-span-2"
+              delay={0}
+            />
+            <EnhancedBentoCard
+              eyebrow="Validação Inteligente"
+              title="Semântica Avançada"
+              description="Detecta problemas de contexto que ferramentas tradicionais ignoram. Entende o significado, não apenas a estrutura do código."
+              iconName="sparkles"
+              className="md:col-span-2"
+              delay={0.1}
+            />
+            <EnhancedBentoCard
+              eyebrow="IA-Nativo"
+              title="Integração com Cursor"
+              description="Gera prompts otimizados para correção instantânea. Copy-paste direto no seu editor favorito."
+              iconName="cpu-chip"
+              delay={0.2}
+            />
+            <EnhancedBentoCard
+              eyebrow="Multi-Agente"
+              title="Sistema com RAG"
+              description="Agentes especializados com citações WCAG verificáveis. Orquestrador + workers."
+              iconName="flag"
+              delay={0.3}
+            />
+            <EnhancedBentoCard
+              eyebrow="Performance"
+              title="Análise Rápida"
+              description="Escaneie projetos inteiros em minutos. Pipeline otimizado para velocidade."
+              iconName="bolt"
+              delay={0.4}
+            />
+            <EnhancedBentoCard
+              eyebrow="Open Source"
+              title="Comunidade Ativa"
+              description="Código aberto no GitHub. Contribuições e feedback são bem-vindos."
+              iconName="heart"
+              delay={0.5}
+            />
+          </div>
+        </Container>
+      </PlusGridItem>
+    </PlusGridRow>
   )
 }
 
 function HowItWorksSection() {
   return (
-    <div className="relative mx-2 mt-2 overflow-hidden rounded-4xl py-32" style={{ background: 'linear-gradient(135deg, #211F22, #7058BE, #211F22)' }} id="how-it-works">
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0 animate-[gradient-shift_8s_ease-in-out_infinite]" style={{
-          background: 'linear-gradient(90deg, rgba(225, 71, 117, 0.2), rgba(225, 97, 50, 0.2), rgba(31, 140, 168, 0.2), rgba(225, 71, 117, 0.2))',
-          backgroundSize: '200% 200%'
-        }} />
-      </div>
+    <PlusGridRow className="relative">
+      <PlusGridItem className="py-20 sm:py-24">
+        <div className="relative mx-2 overflow-hidden rounded-4xl py-32 sm:mx-4" style={{ background: 'linear-gradient(135deg, #211F22, #7058BE, #211F22)' }} id="how-it-works">
+          {/* Animated gradient overlay */}
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute inset-0 animate-[gradient-shift_8s_ease-in-out_infinite]" style={{
+              background: 'linear-gradient(90deg, rgba(225, 71, 117, 0.2), rgba(225, 97, 50, 0.2), rgba(31, 140, 168, 0.2), rgba(225, 71, 117, 0.2))',
+              backgroundSize: '200% 200%'
+            }} />
+          </div>
 
-      <Container className="relative z-10">
-        <Subheading dark>Como Funciona</Subheading>
-        <Heading as="h3" dark className="mt-2 max-w-3xl">
-          Análise de acessibilidade em{' '}
-          <span style={{
-            background: 'linear-gradient(135deg, #E14775, #E16132)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}>
-            3 passos simples
-          </span>
-        </Heading>
+          <Container className="relative z-10">
+            <Subheading dark>Como Funciona</Subheading>
+            <Heading as="h3" dark className="mt-2 max-w-3xl">
+              Análise de acessibilidade em{' '}
+              <span style={{
+                background: 'linear-gradient(135deg, #E14775, #E16132)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>
+                3 passos simples
+              </span>
+            </Heading>
 
-        <div className="mt-16">
-          <TerminalDemo />
+            <div className="mt-16">
+              <TerminalDemo />
+            </div>
+
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="group text-center transition-transform hover:scale-105">
+                <div className="mb-4 flex justify-center transition-transform group-hover:animate-[float_2s_ease-in-out_infinite]">
+                  <BoltIcon className="h-16 w-16" style={{ color: '#E14775' }} />
+                </div>
+                <h4 className="font-display text-2xl font-bold text-white">1. Instale</h4>
+                <p className="mt-3 text-base text-gray-300 leading-relaxed">
+                  pip install a11y-lint e configure suas credenciais Claude
+                </p>
+              </div>
+              <div className="group text-center transition-transform hover:scale-105">
+                <div className="mb-4 flex justify-center transition-transform group-hover:animate-[float_2s_ease-in-out_infinite]">
+                  <MagnifyingGlassIcon className="h-16 w-16" style={{ color: '#1F8CA8' }} />
+                </div>
+                <h4 className="font-display text-2xl font-bold text-white">2. Analise</h4>
+                <p className="mt-3 text-base text-gray-300 leading-relaxed">
+                  Execute a11y-lint scan ./src e aguarde 2-3 minutos
+                </p>
+              </div>
+              <div className="group text-center transition-transform hover:scale-105">
+                <div className="mb-4 flex justify-center transition-transform group-hover:animate-[float_2s_ease-in-out_infinite]">
+                  <CheckCircleIcon className="h-16 w-16" style={{ color: '#269D69' }} />
+                </div>
+                <h4 className="font-display text-2xl font-bold text-white">3. Corrija</h4>
+                <p className="mt-3 text-base text-gray-300 leading-relaxed">
+                  Use os prompts de IA gerados para correções instantâneas
+                </p>
+              </div>
+            </div>
+          </Container>
         </div>
-
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div className="group text-center transition-transform hover:scale-105">
-            <div className="mb-4 flex justify-center transition-transform group-hover:animate-[float_2s_ease-in-out_infinite]">
-              <BoltIcon className="h-16 w-16" style={{ color: '#E14775' }} />
-            </div>
-            <h4 className="font-display text-2xl font-bold text-white">1. Instale</h4>
-            <p className="mt-3 text-base text-gray-300 leading-relaxed">
-              pip install a11y-lint e configure suas credenciais Claude
-            </p>
-          </div>
-          <div className="group text-center transition-transform hover:scale-105">
-            <div className="mb-4 flex justify-center transition-transform group-hover:animate-[float_2s_ease-in-out_infinite]">
-              <MagnifyingGlassIcon className="h-16 w-16" style={{ color: '#1F8CA8' }} />
-            </div>
-            <h4 className="font-display text-2xl font-bold text-white">2. Analise</h4>
-            <p className="mt-3 text-base text-gray-300 leading-relaxed">
-              Execute a11y-lint scan ./src e aguarde 2-3 minutos
-            </p>
-          </div>
-          <div className="group text-center transition-transform hover:scale-105">
-            <div className="mb-4 flex justify-center transition-transform group-hover:animate-[float_2s_ease-in-out_infinite]">
-              <CheckCircleIcon className="h-16 w-16" style={{ color: '#269D69' }} />
-            </div>
-            <h4 className="font-display text-2xl font-bold text-white">3. Corrija</h4>
-            <p className="mt-3 text-base text-gray-300 leading-relaxed">
-              Use os prompts de IA gerados para correções instantâneas
-            </p>
-          </div>
-        </div>
-      </Container>
-    </div>
+      </PlusGridItem>
+    </PlusGridRow>
   )
 }
 
 function ScreenshotsSection() {
   return (
-    <div className="py-32" style={{ backgroundColor: '#FAF4F3' }}>
-      <Container>
-        <Subheading>Interface Intuitiva</Subheading>
-        <Heading as="h3" className="mt-2 max-w-3xl">
-          Terminal UI poderoso com{' '}
-          <span style={{
-            background: 'linear-gradient(135deg, #7058BE, #E14775)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}>
-            experiência profissional
-          </span>
-        </Heading>
-        <p className="mt-6 max-w-3xl text-xl/8" style={{ color: '#211F22', opacity: 0.75 }}>
-          Interface de linha de comando moderna com suporte a temas claro e escuro,
-          navegação intuitiva e feedback visual em tempo real durante análises.
-        </p>
-        <div className="mt-16">
-          <ScreenshotGallery />
-        </div>
-      </Container>
-    </div>
+    <PlusGridRow className="relative">
+      <PlusGridItem className="py-20 sm:py-24">
+        <Container>
+          <Subheading>Interface Intuitiva</Subheading>
+          <Heading as="h3" className="mt-2 max-w-3xl">
+            Terminal UI poderoso com{' '}
+            <span style={{
+              background: 'linear-gradient(135deg, #7058BE, #E14775)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}>
+              experiência profissional
+            </span>
+          </Heading>
+          <p className="mt-6 max-w-3xl text-xl/8" style={{ color: '#211F22', opacity: 0.75 }}>
+            Interface de linha de comando moderna com suporte a temas claro e escuro,
+            navegação intuitiva e feedback visual em tempo real durante análises.
+          </p>
+          <div className="mt-16">
+            <ScreenshotGallery />
+          </div>
+        </Container>
+      </PlusGridItem>
+    </PlusGridRow>
   )
 }
 
 function DemoSection() {
   return (
-    <div className="py-32">
-      <Container id="demo">
-        <Subheading>Demonstração Interativa</Subheading>
-        <Heading as="h3" className="mt-2 max-w-3xl">
-          Veja o a11y-lint em ação
-        </Heading>
+    <PlusGridRow className="relative">
+      <PlusGridItem className="py-20 sm:py-24">
+        <Container id="demo">
+          <Subheading>Demonstração Interativa</Subheading>
+          <Heading as="h3" className="mt-2 max-w-3xl">
+            Veja o a11y-lint em ação
+          </Heading>
 
-        <div className="mt-16 space-y-8">
-          <CodeExample
-            title="Imagem sem texto alternativo"
-            description="Leitores de tela não conseguem descrever a imagem para usuários com deficiência visual"
-            wcagRule="1.1.1 Conteúdo Não Textual (Nível A)"
-            severity="high"
-            beforeCode={`<img src={product.image} className="w-full" />`}
-            afterCode={`<img
+          <div className="mt-16 space-y-8">
+            <CodeExample
+              title="Imagem sem texto alternativo"
+              description="Leitores de tela não conseguem descrever a imagem para usuários com deficiência visual"
+              wcagRule="1.1.1 Conteúdo Não Textual (Nível A)"
+              severity="high"
+              beforeCode={`<img src={product.image} className="w-full" />`}
+              afterCode={`<img
   src={product.image}
   alt={product.name}
   className="w-full"
 />`}
-          />
+            />
 
-          <CodeExample
-            title="Contraste de cor insuficiente"
-            description="Texto com baixo contraste é difícil de ler para usuários com baixa visão"
-            wcagRule="1.4.3 Contraste Mínimo (Nível AA)"
-            severity="medium"
-            beforeCode={`<button className="bg-gray-300 text-gray-400">
+            <CodeExample
+              title="Contraste de cor insuficiente"
+              description="Texto com baixo contraste é difícil de ler para usuários com baixa visão"
+              wcagRule="1.4.3 Contraste Mínimo (Nível AA)"
+              severity="medium"
+              beforeCode={`<button className="bg-gray-300 text-gray-400">
   Enviar
 </button>`}
-            afterCode={`<button className="bg-blue-600 text-white">
+              afterCode={`<button className="bg-blue-600 text-white">
   Enviar
 </button>`}
-          />
+            />
 
-          <CodeExample
-            title="Botão sem acessibilidade no SwiftUI"
-            description="VoiceOver não consegue identificar a ação do botão adequadamente"
-            wcagRule="Apple HIG - VoiceOver"
-            severity="high"
-            beforeCode={`Button(action: { submit() }) {
+            <CodeExample
+              title="Botão sem acessibilidade no SwiftUI"
+              description="VoiceOver não consegue identificar a ação do botão adequadamente"
+              wcagRule="Apple HIG - VoiceOver"
+              severity="high"
+              beforeCode={`Button(action: { submit() }) {
   Image(systemName: "paperplane")
 }`}
-            afterCode={`Button(action: { submit() }) {
+              afterCode={`Button(action: { submit() }) {
   Image(systemName: "paperplane")
 }
 .accessibilityLabel("Enviar mensagem")
 .accessibilityHint("Toque duas vezes para enviar")`}
-          />
-        </div>
-
-        <div className="mt-24">
-          <Subheading>Relatório Gerado</Subheading>
-          <Heading as="h3" className="mt-2 max-w-3xl">
-            Resultados detalhados e acionáveis
-          </Heading>
-          <div className="mt-12">
-            <SampleReport />
+            />
           </div>
-        </div>
-      </Container>
-    </div>
+
+          <div className="mt-24">
+            <Subheading>Relatório Gerado</Subheading>
+            <Heading as="h3" className="mt-2 max-w-3xl">
+              Resultados detalhados e acionáveis
+            </Heading>
+            <div className="mt-12">
+              <SampleReport />
+            </div>
+          </div>
+        </Container>
+      </PlusGridItem>
+    </PlusGridRow>
   )
 }
 
 function MetricsSection() {
   return (
-    <div className="py-32 bg-gradient-to-b from-gray-50 to-white">
-      <Container>
-        <Subheading>Resultados Comprovados</Subheading>
-        <Heading as="h3" className="mt-2 max-w-3xl">
-          Performance superior às ferramentas tradicionais
-        </Heading>
-        <div className="mt-16">
-          <MetricsCards />
-        </div>
-      </Container>
-    </div>
+    <PlusGridRow className="relative">
+      <PlusGridItem className="py-20 sm:py-24">
+        <Container>
+          <Subheading>Resultados Comprovados</Subheading>
+          <Heading as="h3" className="mt-2 max-w-3xl">
+            Performance superior às ferramentas tradicionais
+          </Heading>
+          <div className="mt-16">
+            <MetricsCards />
+          </div>
+        </Container>
+      </PlusGridItem>
+    </PlusGridRow>
   )
 }
 
 function ArchitectureSection() {
   return (
-    <div className="py-32">
-      <Container>
-        <Subheading>Arquitetura</Subheading>
-        <Heading as="h3" className="mt-2 max-w-3xl">
-          Sistema Multi-Agente com RAG
-        </Heading>
-        <p className="mt-6 max-w-3xl text-lg/8 text-gray-600">
-          Orquestrador vertical coordena agentes especializados que analisam código com citações WCAG verificáveis. Padrão ReAct reduz alucinações de 14% para 6%.
-        </p>
-        <div className="mt-16">
-          <ArchitectureDiagram />
-        </div>
-      </Container>
-    </div>
+    <PlusGridRow className="relative">
+      <PlusGridItem className="py-20 sm:py-24">
+        <Container>
+          <Subheading>Arquitetura</Subheading>
+          <Heading as="h3" className="mt-2 max-w-3xl">
+            Sistema Multi-Agente com RAG
+          </Heading>
+          <p className="mt-6 max-w-3xl text-lg/8 text-gray-600">
+            Orquestrador vertical coordena agentes especializados que analisam código com citações WCAG verificáveis. Padrão ReAct reduz alucinações de 14% para 6%.
+          </p>
+          <div className="mt-16">
+            <ArchitectureDiagram />
+          </div>
+        </Container>
+      </PlusGridItem>
+    </PlusGridRow>
+  )
+}
+
+function AcademicSection() {
+  return (
+    <PlusGridRow className="relative">
+      <PlusGridItem className="py-20 sm:py-24">
+        <Container>
+          <Subheading>Acadêmico</Subheading>
+          <Heading as="h3" className="mt-2 max-w-3xl">
+            Documentação do Projeto
+          </Heading>
+          <p className="mt-6 max-w-3xl text-lg/8 text-gray-600">
+            Acesse os materiais acadêmicos desenvolvidos durante a pesquisa e elaboração deste Trabalho de Conclusão de Curso.
+          </p>
+          
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+            <div className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-md transition-all hover:shadow-xl border border-gray-100">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7058BE]/10 group-hover:bg-[#7058BE]/20 transition-colors">
+                <PresentationChartBarIcon className="h-6 w-6 text-[#7058BE]" />
+              </div>
+              <h4 className="mt-6 text-xl font-semibold text-gray-900">Poster do Projeto</h4>
+              <p className="mt-2 text-gray-600">
+                Visualização resumida da proposta, metodologia e resultados alcançados pelo a11y-lint.
+              </p>
+              <div className="mt-6">
+                <Button href="/documents/poster.pdf" target="_blank" variant="outline" className="w-full sm:w-auto gap-2 group-hover:border-[#7058BE]/30 group-hover:bg-[#7058BE]/5">
+                  Visualizar Poster <span aria-hidden="true">&rarr;</span>
+                </Button>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-md transition-all hover:shadow-xl border border-gray-100">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E14775]/10 group-hover:bg-[#E14775]/20 transition-colors">
+                <DocumentTextIcon className="h-6 w-6 text-[#E14775]" />
+              </div>
+              <h4 className="mt-6 text-xl font-semibold text-gray-900">Artigo Completo</h4>
+              <p className="mt-2 text-gray-600">
+                Texto integral com fundamentação teórica, detalhes da implementação e análise de resultados.
+              </p>
+              <div className="mt-6">
+                <Button href="/documents/article.pdf" target="_blank" variant="outline" className="w-full sm:w-auto gap-2 group-hover:border-[#E14775]/30 group-hover:bg-[#E14775]/5">
+                  Ler Artigo <span aria-hidden="true">&rarr;</span>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </PlusGridItem>
+    </PlusGridRow>
   )
 }
 
 function CTASection() {
   return (
-    <div className="relative overflow-hidden py-32">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #7058BE, #E14775, #E16132)' }}>
-        <div className="absolute inset-0 animate-[gradient-shift_10s_ease-in-out_infinite]" style={{
-          background: 'linear-gradient(90deg, rgba(112, 88, 190, 0.5), rgba(225, 71, 117, 0.5), rgba(31, 140, 168, 0.5), rgba(112, 88, 190, 0.5))',
-          backgroundSize: '200% 200%'
-        }} />
-      </div>
-
-      {/* Morphing blobs */}
-      <MorphingBlob
-        className="top-0 right-0 h-96 w-96"
-        color="rgba(250, 244, 243, 0.15)"
-        delay={0}
-      />
-      <MorphingBlob
-        className="bottom-0 left-0 h-80 w-80"
-        color="rgba(250, 244, 243, 0.15)"
-        delay={0.5}
-      />
-
-      <Container className="relative z-10 text-center">
-        <h2 className="font-display text-5xl font-bold sm:text-6xl md:text-7xl" style={{ color: '#FAF4F3' }}>
-          Pronto para melhorar a{' '}
-          <span className="block" style={{
-            background: 'linear-gradient(135deg, #CC7B08, #269D69)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}>
-            acessibilidade?
-          </span>
-        </h2>
-        <p className="mt-8 text-xl sm:text-2xl" style={{ color: 'rgba(250, 244, 243, 0.9)' }}>
-          Ferramenta open-source desenvolvida como TCC.
-          <br />
-          Contribuições são bem-vindas!
-        </p>
-        <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:justify-center">
-          <Button
-            href="https://github.com/mellobirkan/a11y-lint"
-            className="group relative overflow-hidden transition-all hover:scale-105 hover:shadow-2xl"
-            style={{ backgroundColor: '#FAF4F3', color: '#7058BE' }}
-          >
-            <span className="relative z-10 font-bold">Ver no GitHub →</span>
-            <div className="absolute inset-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0" style={{
-              background: 'linear-gradient(135deg, #CC7B08, #269D69)'
+    <PlusGridRow className="relative">
+      <PlusGridItem className="py-20 sm:py-24">
+        <div className="relative mx-2 overflow-hidden rounded-4xl py-32 sm:mx-4 text-center" 
+             style={{ background: 'linear-gradient(135deg, var(--color-dark), var(--color-purple), var(--color-dark))' }}>
+          
+          {/* Animated gradient overlay */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0 animate-[gradient-shift_8s_ease-in-out_infinite]" style={{
+              background: 'linear-gradient(90deg, var(--color-rose), var(--color-coral), var(--color-cyan), var(--color-rose))',
+              backgroundSize: '200% 200%'
             }} />
-          </Button>
-          <Button
-            href="#demo"
-            variant="secondary"
-            className="border-2 bg-transparent transition-all hover:scale-105"
-            style={{
-              borderColor: '#FAF4F3',
-              color: '#FAF4F3',
-            }}
-          >
-            Explorar Demo
-          </Button>
+          </div>
+
+          {/* Morphing blobs */}
+          <MorphingBlob
+            className="top-0 right-0 h-96 w-96 opacity-40 mix-blend-screen"
+            color="var(--color-purple)"
+            delay={0}
+          />
+          <MorphingBlob
+            className="bottom-0 left-0 h-80 w-80 opacity-40 mix-blend-screen"
+            color="var(--color-rose)"
+            delay={0.5}
+          />
+
+          <Container className="relative z-10">
+            <Heading as="h2" dark className="mx-auto max-w-3xl !text-5xl sm:!text-6xl md:!text-7xl">
+              Pronto para melhorar a{' '}
+              <span className="block mt-2" style={{
+                background: 'linear-gradient(135deg, var(--color-amber), var(--color-teal))',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>
+                acessibilidade?
+              </span>
+            </Heading>
+            
+            <p className="mx-auto mt-8 max-w-2xl text-xl text-gray-300/90">
+              Ferramenta open-source desenvolvida como TCC.
+              <br />
+              Contribuições são bem-vindas!
+            </p>
+
+            <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
+              <Button
+                href="https://github.com/mellobirkan/a11y-lint"
+                className="cursor-fancy group relative h-14 min-w-[200px] overflow-hidden !rounded-full !bg-cream !text-dark !text-lg !font-bold shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+              >
+                <span className="relative z-10 group-hover:opacity-0 transition-opacity duration-300">Ver no GitHub</span>
+                <span className="absolute inset-0 z-20 flex items-center justify-center text-cream opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  Ver no GitHub
+                </span>
+                <div className="absolute inset-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0" 
+                     style={{ background: 'linear-gradient(135deg, var(--color-purple), var(--color-rose))' }} 
+                />
+              </Button>
+              
+              <Button
+                href="#demo"
+                variant="secondary"
+                className="cursor-fancy h-14 min-w-[200px] !rounded-full border border-white/20 !bg-white/5 !text-lg !text-white backdrop-blur-sm hover:!bg-white/10"
+              >
+                Explorar Demo
+              </Button>
+            </div>
+          </Container>
         </div>
-      </Container>
-    </div>
+      </PlusGridItem>
+    </PlusGridRow>
   )
 }
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden text-gray-950 bg-[#FAF4F3]">
       <ScrollProgress />
       <Hero />
       <main>
-        <div className="bg-gradient-to-b from-white from-50% to-gray-100 py-32">
+        <PlusGrid>
           <ProblemSection />
-          <div className="mt-32">
-            <BentoSection />
-          </div>
-        </div>
-        <HowItWorksSection />
-        <ScreenshotsSection />
-        <DemoSection />
-        <MetricsSection />
-        <ArchitectureSection />
-        <CTASection />
+          <BentoSection />
+          <HowItWorksSection />
+          <ScreenshotsSection />
+          <DemoSection />
+          <MetricsSection />
+          <ArchitectureSection />
+          <AcademicSection />
+          <CTASection />
+        </PlusGrid>
       </main>
       <Footer />
     </div>
