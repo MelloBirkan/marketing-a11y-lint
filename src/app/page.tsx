@@ -569,45 +569,54 @@ function CTASection() {
           />
 
           <Container className="relative z-10">
-            <Heading as="h2" dark className="mx-auto max-w-3xl !text-5xl sm:!text-6xl md:!text-7xl">
-              Pronto para melhorar a{' '}
-              <span className="block mt-2" style={{
-                background: 'linear-gradient(135deg, var(--color-amber), var(--color-teal))',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                acessibilidade?
-              </span>
-            </Heading>
-            
-            <p className="mx-auto mt-8 max-w-2xl text-xl text-gray-300/90">
-              Ferramenta open-source desenvolvida como TCC.
-              <br />
-              Contribuições são bem-vindas!
-            </p>
-
-            <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
-              <Button
-                href="https://github.com/mellobirkan/a11y-lint"
-                className="cursor-fancy group relative h-14 min-w-[200px] overflow-hidden !rounded-full !bg-cream !text-dark !text-lg !font-bold shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
-              >
-                <span className="relative z-10 group-hover:opacity-0 transition-opacity duration-300">Ver no GitHub</span>
-                <span className="absolute inset-0 z-20 flex items-center justify-center text-cream opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  Ver no GitHub
-                </span>
-                <div className="absolute inset-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0" 
-                     style={{ background: 'linear-gradient(135deg, var(--color-purple), var(--color-rose))' }} 
-                />
-              </Button>
+            {/* Glass container for content */}
+            <div className="relative mx-auto max-w-5xl overflow-hidden rounded-4xl border border-white/10 bg-white/5 px-8 py-16 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:border-white/20 hover:bg-white/10 sm:px-12 sm:py-20">
+              {/* Inner glow effects */}
+              <div className="pointer-events-none absolute -left-20 top-1/2 h-60 w-60 -translate-y-1/2 rounded-full opacity-20 blur-3xl" style={{ background: 'radial-gradient(circle, rgba(112, 88, 190, 0.6), transparent)' }} />
+              <div className="pointer-events-none absolute -right-20 top-1/2 h-60 w-60 -translate-y-1/2 rounded-full opacity-20 blur-3xl" style={{ background: 'radial-gradient(circle, rgba(225, 71, 117, 0.6), transparent)' }} />
               
-              <Button
-                href="#demo"
-                variant="secondary"
-                className="cursor-fancy h-14 min-w-[200px] !rounded-full border border-white/20 !bg-white/5 !text-lg !text-white backdrop-blur-sm hover:!bg-white/10"
-              >
-                Explorar Demo
-              </Button>
+              <div className="relative z-10">
+                <Heading as="h2" dark className="mx-auto max-w-3xl !text-5xl sm:!text-6xl md:!text-7xl">
+                  Pronto para melhorar a{' '}
+                  <span className="block mt-2" style={{
+                    background: 'linear-gradient(135deg, var(--color-amber), var(--color-teal))',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}>
+                    acessibilidade?
+                  </span>
+                </Heading>
+                
+                <p className="mx-auto mt-8 max-w-2xl text-xl text-white/90 font-medium">
+                  Ferramenta open-source desenvolvida como TCC.
+                  <br />
+                  Contribuições são bem-vindas!
+                </p>
+
+                <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
+                  <Button
+                    href="https://github.com/mellobirkan/a11y-lint"
+                    className="cursor-fancy group relative h-14 min-w-[200px] overflow-hidden !rounded-full !bg-cream !text-dark !text-lg !font-bold shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
+                  >
+                    <span className="relative z-10 group-hover:opacity-0 transition-opacity duration-300">Ver no GitHub</span>
+                    <span className="absolute inset-0 z-20 flex items-center justify-center text-cream opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      Ver no GitHub
+                    </span>
+                    <div className="absolute inset-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0" 
+                         style={{ background: 'linear-gradient(135deg, var(--color-purple), var(--color-rose))' }} 
+                    />
+                  </Button>
+                  
+                  <Button
+                    href="#demo"
+                    variant="secondary"
+                    className="cursor-fancy h-14 min-w-[200px] !rounded-full border border-white/30 !bg-white/10 !text-lg !text-white backdrop-blur-md shadow-lg hover:!bg-white/20 hover:border-white/40"
+                  >
+                    Explorar Demo
+                  </Button>
+                </div>
+              </div>
             </div>
           </Container>
         </div>
