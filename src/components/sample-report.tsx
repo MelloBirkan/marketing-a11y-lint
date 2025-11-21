@@ -1,4 +1,9 @@
 import clsx from 'clsx'
+import {
+  DocumentTextIcon,
+  ExclamationCircleIcon,
+  SparklesIcon,
+} from '@heroicons/react/20/solid'
 
 interface Issue {
   id: number
@@ -50,61 +55,59 @@ export function SampleReport() {
   return (
     <div className="overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-black/5">
       {/* Header */}
-      <div className="border-b border-gray-200 bg-gradient-to-r from-purple-50 to-blue-50 px-6 py-6">
-        <h3 className="font-display text-2xl font-medium text-gray-950">
+      <div className="border-b border-gray-100 bg-gray-50/50 px-6 py-6">
+        <h3 className="font-display text-lg font-semibold text-gray-900">
           Relatório de Acessibilidade
         </h3>
-        <p className="mt-2 text-sm text-gray-600">
+        <p className="mt-1 text-sm text-gray-500">
           Análise gerada por a11y-lint • 3 problemas encontrados
         </p>
       </div>
 
       {/* Issues list */}
-      <div className="divide-y divide-gray-200">
+      <div className="divide-y divide-gray-100">
         {sampleIssues.map((issue) => {
           const config = severityConfig[issue.severity]
 
           return (
-            <div key={issue.id} className="p-6 hover:bg-gray-50 transition-colors">
+            <div key={issue.id} className="p-6 hover:bg-gray-50/50 transition-colors">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <span className={clsx('h-8 w-8 rounded-full flex items-center justify-center text-white text-sm font-bold', config.color)}>
+                  <span className={clsx('flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold text-white shadow-sm', config.color)}>
                     {issue.id}
                   </span>
                 </div>
 
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-3">
-                    <h4 className="font-display text-lg font-medium text-gray-950">
+                    <h4 className="text-base font-medium text-gray-900">
                       {issue.title}
                     </h4>
-                    <span className={clsx('rounded-full px-2.5 py-0.5 text-xs font-medium', config.textColor, config.bgColor)}>
+                    <span className={clsx('rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wide', config.textColor, config.bgColor)}>
                       {config.label}
                     </span>
                   </div>
 
-                  <p className="mt-2 text-sm text-gray-600">{issue.description}</p>
+                  <p className="mt-1 text-sm text-gray-600 leading-relaxed">{issue.description}</p>
 
                   <div className="mt-4 flex flex-wrap gap-4 text-xs">
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-gray-500">📄 Arquivo:</span>
-                      <code className="rounded bg-gray-100 px-2 py-1 font-mono text-gray-950">
-                        {issue.file}:{issue.line}
-                      </code>
+                    <div className="flex items-center gap-1.5 text-gray-500">
+                      <DocumentTextIcon className="h-4 w-4 text-gray-400" />
+                      <span className="font-medium text-gray-900">{issue.file}:{issue.line}</span>
                     </div>
 
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-gray-500">♿ WCAG:</span>
-                      <span className="font-medium text-purple-700">{issue.wcag}</span>
+                    <div className="flex items-center gap-1.5 text-gray-500">
+                      <ExclamationCircleIcon className="h-4 w-4 text-gray-400" />
+                      <span>WCAG: <span className="font-medium text-gray-900">{issue.wcag}</span></span>
                     </div>
                   </div>
 
-                  <div className="mt-4 rounded-lg bg-purple-50 p-3 border border-purple-100">
-                    <div className="flex items-start gap-2">
-                      <span className="text-purple-600">💡</span>
-                      <div>
-                        <p className="text-xs font-medium text-purple-900">Prompt para IA:</p>
-                        <p className="mt-1 text-xs text-purple-700">
+                  <div className="mt-4 rounded-lg bg-gray-50 border border-gray-100 p-3">
+                    <div className="flex items-start gap-2.5">
+                      <SparklesIcon className="h-4 w-4 text-gray-400 mt-0.5" />
+                      <div className="min-w-0">
+                        <p className="text-xs font-medium text-gray-900">Sugestão de Correção com IA</p>
+                        <p className="mt-1 text-xs font-mono text-gray-600 break-all">
                           &quot;Adicione o atributo alt descritivo à imagem em {issue.file}:{issue.line}&quot;
                         </p>
                       </div>
@@ -118,12 +121,15 @@ export function SampleReport() {
       </div>
 
       {/* Footer */}
-      <div className="border-t border-gray-200 bg-gray-50 px-6 py-4">
-        <p className="text-xs text-gray-500">
-          Relatório gerado com{' '}
-          <span className="font-medium text-gray-950">a11y-lint</span> •{' '}
-          Sistema de IA Multi-Agente com RAG
-        </p>
+      <div className="border-t border-gray-100 bg-gray-50 px-6 py-4">
+        <div className="flex items-center justify-between">
+          <p className="text-xs font-medium text-gray-500">
+            a11y-lint v1.0.0
+          </p>
+          <p className="text-xs text-gray-400">
+            Sistema de IA Multi-Agente com RAG
+          </p>
+        </div>
       </div>
     </div>
   )

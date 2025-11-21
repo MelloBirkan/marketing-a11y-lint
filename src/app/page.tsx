@@ -307,61 +307,125 @@ function DemoSection() {
     <PlusGridRow className="relative">
       <PlusGridItem className="py-20 sm:py-24">
         <Container id="demo">
-          <Subheading>Demonstração Interativa</Subheading>
-          <Heading as="h3" className="mt-2 max-w-3xl">
-            Veja o a11y-lint em ação
-          </Heading>
+          {/* Glassmorphic container for Demo */}
+          <div className="relative overflow-hidden rounded-4xl border border-white/40 bg-white/60 p-8 sm:p-12 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:border-white/60 hover:bg-white/70 hover:shadow-[0_20px_80px_-20px_rgba(31,140,168,0.3)]">
+            {/* Animated gradient background */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute inset-0 animate-[gradient-shift_15s_ease-in-out_infinite]" style={{
+                background: 'linear-gradient(135deg, rgba(31, 140, 168, 0.15), rgba(38, 157, 105, 0.15), rgba(112, 88, 190, 0.15))',
+                backgroundSize: '200% 200%'
+              }} />
+            </div>
 
-          <div className="mt-16 space-y-8">
-            <CodeExample
-              title="Imagem sem texto alternativo"
-              description="Leitores de tela não conseguem descrever a imagem para usuários com deficiência visual"
-              wcagRule="1.1.1 Conteúdo Não Textual (Nível A)"
-              severity="high"
-              beforeCode={`<img src={product.image} className="w-full" />`}
-              afterCode={`<img
+            {/* Subtle glow effects */}
+            <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full opacity-30 blur-3xl" style={{ background: 'radial-gradient(circle, rgba(31, 140, 168, 0.4), transparent)' }} />
+            <div className="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full opacity-30 blur-3xl" style={{ background: 'radial-gradient(circle, rgba(38, 157, 105, 0.4), transparent)' }} />
+            
+            {/* Content */}
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200/50 bg-cyan-50/80 px-4 py-1.5 backdrop-blur-sm mb-6">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-500" />
+                <Subheading className="!mb-0 !text-cyan-700">Demonstração Interativa</Subheading>
+              </div>
+
+              <Heading as="h3" className="max-w-3xl">
+                Veja o a11y-lint em{' '}
+                <span style={{
+                  background: 'linear-gradient(135deg, #1F8CA8, #269D69)',
+                  backgroundClip: 'text',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}>
+                  ação
+                </span>
+              </Heading>
+
+              <div className="mt-12 space-y-8">
+                <CodeExample
+                  title="Imagem sem texto alternativo"
+                  description="Leitores de tela não conseguem descrever a imagem para usuários com deficiência visual"
+                  wcagRule="1.1.1 Conteúdo Não Textual (Nível A)"
+                  severity="high"
+                  beforeCode={`<img src={product.image} className="w-full" />`}
+                  afterCode={`<img
   src={product.image}
   alt={product.name}
   className="w-full"
 />`}
-            />
+                />
 
-            <CodeExample
-              title="Contraste de cor insuficiente"
-              description="Texto com baixo contraste é difícil de ler para usuários com baixa visão"
-              wcagRule="1.4.3 Contraste Mínimo (Nível AA)"
-              severity="medium"
-              beforeCode={`<button className="bg-gray-300 text-gray-400">
+                <CodeExample
+                  title="Contraste de cor insuficiente"
+                  description="Texto com baixo contraste é difícil de ler para usuários com baixa visão"
+                  wcagRule="1.4.3 Contraste Mínimo (Nível AA)"
+                  severity="medium"
+                  beforeCode={`<button className="bg-gray-300 text-gray-400">
   Enviar
 </button>`}
-              afterCode={`<button className="bg-blue-600 text-white">
+                  afterCode={`<button className="bg-blue-600 text-white">
   Enviar
 </button>`}
-            />
+                />
 
-            <CodeExample
-              title="Botão sem acessibilidade no SwiftUI"
-              description="VoiceOver não consegue identificar a ação do botão adequadamente"
-              wcagRule="Apple HIG - VoiceOver"
-              severity="high"
-              beforeCode={`Button(action: { submit() }) {
+                <CodeExample
+                  title="Botão sem acessibilidade no SwiftUI"
+                  description="VoiceOver não consegue identificar a ação do botão adequadamente"
+                  wcagRule="Apple HIG - VoiceOver"
+                  severity="high"
+                  beforeCode={`Button(action: { submit() }) {
   Image(systemName: "paperplane")
 }`}
-              afterCode={`Button(action: { submit() }) {
+                  afterCode={`Button(action: { submit() }) {
   Image(systemName: "paperplane")
 }
 .accessibilityLabel("Enviar mensagem")
 .accessibilityHint("Toque duas vezes para enviar")`}
-            />
+                />
+              </div>
+            </div>
           </div>
 
-          <div className="mt-24">
-            <Subheading>Relatório Gerado</Subheading>
-            <Heading as="h3" className="mt-2 max-w-3xl">
-              Resultados detalhados e acionáveis
-            </Heading>
-            <div className="mt-12">
-              <SampleReport />
+          <div className="relative mt-24">
+            {/* Glassmorphic container with gradient border */}
+            <div className="relative overflow-hidden rounded-4xl border border-white/40 bg-white/60 p-12 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:border-white/60 hover:bg-white/70 hover:shadow-[0_20px_80px_-20px_rgba(112,88,190,0.3)]">
+              {/* Animated gradient background */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute inset-0 animate-[gradient-shift_10s_ease-in-out_infinite]" style={{
+                  background: 'linear-gradient(135deg, rgba(112, 88, 190, 0.15), rgba(225, 71, 117, 0.15), rgba(31, 140, 168, 0.15), rgba(38, 157, 105, 0.15))',
+                  backgroundSize: '200% 200%'
+                }} />
+              </div>
+
+              {/* Subtle glow effects */}
+              <div className="pointer-events-none absolute -left-20 -top-20 h-60 w-60 rounded-full opacity-30 blur-3xl" style={{ background: 'radial-gradient(circle, rgba(112, 88, 190, 0.4), transparent)' }} />
+              <div className="pointer-events-none absolute -bottom-20 -right-20 h-60 w-60 rounded-full opacity-30 blur-3xl" style={{ background: 'radial-gradient(circle, rgba(225, 71, 117, 0.4), transparent)' }} />
+
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 rounded-full border border-purple-200/50 bg-purple-50/80 px-4 py-1.5 backdrop-blur-sm">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-purple-500" />
+                  <Subheading className="!mb-0 !text-purple-700">Relatório Gerado</Subheading>
+                </div>
+                
+                <Heading as="h3" className="mt-6 max-w-3xl">
+                  <span style={{
+                    background: 'linear-gradient(135deg, #7058BE, #E14775, #1F8CA8)',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}>
+                    Resultados detalhados e acionáveis
+                  </span>
+                </Heading>
+                
+                <p className="mt-4 max-w-2xl text-base/7 font-medium" style={{ color: '#211F22', opacity: 0.7 }}>
+                  Relatórios completos com citações WCAG verificáveis, localização exata dos problemas e prompts otimizados para correção instantânea com IA.
+                </p>
+
+                <div className="mt-12">
+                  <SampleReport />
+                </div>
+              </div>
             </div>
           </div>
         </Container>
