@@ -41,9 +41,9 @@ function Sitemap() {
       <div>
         <SitemapHeading>Projeto</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="https://github.com/mellobirkan/a11y-lint">GitHub</SitemapLink>
-          <SitemapLink href="https://github.com/mellobirkan/a11y-lint#readme">Documentação</SitemapLink>
-          <SitemapLink href="https://github.com/mellobirkan/project_a11y_lint">Repositório do Código</SitemapLink>
+          <SitemapLink href="https://github.com/MelloBirkan">GitHub</SitemapLink>
+          <SitemapLink href="/documents/poster.pdf">Poster do Projeto</SitemapLink>
+          <SitemapLink href="/documents/article.pdf">Artigo Completo</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
@@ -84,9 +84,9 @@ function SocialLinks() {
   return (
     <>
       <Link
-        href="https://github.com/mellobirkan/a11y-lint"
+        href="https://github.com/MelloBirkan"
         target="_blank"
-        aria-label="Visite nosso GitHub"
+        aria-label="Visite meu GitHub"
         className="text-gray-950 data-hover:text-gray-950/75"
       >
         <SocialIconGitHub className="size-4" />
@@ -94,7 +94,7 @@ function SocialLinks() {
       <Link
         href="https://linkedin.com/in/mellobirkan"
         target="_blank"
-        aria-label="Visite nosso LinkedIn"
+        aria-label="Visite meu LinkedIn"
         className="text-gray-950 data-hover:text-gray-950/75"
       >
         <SocialIconLinkedIn className="size-4" />
@@ -106,7 +106,7 @@ function SocialLinks() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} a11y-lint • Projeto TCC • Open Source
+      &copy; {new Date().getFullYear()} a11y-lint • Projeto de TCC • Universidade Presbiteriana Mackenzie
     </div>
   )
 }

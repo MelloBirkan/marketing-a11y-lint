@@ -69,7 +69,7 @@ function Hero() {
               React e SwiftUI. Validação semântica com citações WCAG verificáveis.
             </p>
             <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-              <Button href="https://github.com/mellobirkan/a11y-lint" className="cursor-fancy group relative overflow-hidden">
+              <Button href="https://github.com/MelloBirkan" className="cursor-fancy group relative overflow-hidden">
                 <span className="relative z-10">Ver no GitHub</span>
                 <div className="absolute inset-0 translate-y-full transition-transform duration-300 group-hover:translate-y-0" style={{ background: 'linear-gradient(135deg, #7058BE, #E14775)' }} />
               </Button>
@@ -192,9 +192,9 @@ function BentoSection() {
               delay={0.4}
             />
             <EnhancedBentoCard
-              eyebrow="Open Source"
-              title="Comunidade Ativa"
-              description="Código aberto no GitHub. Contribuições e feedback são bem-vindos."
+              eyebrow="Projeto Acadêmico"
+              title="TCC Documentado"
+              description="Projeto de conclusão de curso com poster e artigo científico disponíveis."
               iconName="heart"
               delay={0.5}
             />
@@ -589,14 +589,14 @@ function CTASection() {
                 </Heading>
                 
                 <p className="mx-auto mt-8 max-w-2xl text-xl text-white/90 font-medium">
-                  Ferramenta open-source desenvolvida como TCC.
+                  Projeto de Trabalho de Conclusão de Curso.
                   <br />
-                  Contribuições são bem-vindas!
+                  Confira o repositório no GitHub para mais detalhes!
                 </p>
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-6 sm:flex-row">
                   <Button
-                    href="https://github.com/mellobirkan/a11y-lint"
+                    href="https://github.com/MelloBirkan"
                     className="cursor-fancy group relative h-14 min-w-[200px] overflow-hidden !rounded-full !bg-cream !text-dark !text-lg !font-bold shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
                   >
                     <span className="relative z-10 group-hover:opacity-0 transition-opacity duration-300">Ver no GitHub</span>
