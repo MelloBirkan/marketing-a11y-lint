@@ -39,11 +39,11 @@ function AgentCard({ title, description, Icon, color, delay, className = '' }: A
         style={{ background: color }}
       />
 
-      {/* Card content */}
-      <div className="relative overflow-hidden rounded-2xl bg-white p-6 shadow-xl ring-1 ring-black/5 transition-shadow duration-300 group-hover:shadow-2xl">
+      {/* Card content - Glassmorphism */}
+      <div className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/40 p-6 shadow-xl backdrop-blur-xl transition-all duration-500 group-hover:border-white/70 group-hover:bg-white/60 group-hover:shadow-2xl">
         {/* Subtle gradient overlay */}
         <div
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-5 transition-opacity group-hover:opacity-10"
           style={{ background: `linear-gradient(135deg, ${color}, transparent)` }}
         />
 
@@ -51,22 +51,23 @@ function AgentCard({ title, description, Icon, color, delay, className = '' }: A
         <motion.div
           whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
           transition={{ duration: 0.5 }}
-          className="relative mb-4 inline-flex items-center justify-center rounded-xl p-3"
-          style={{ backgroundColor: `${color}15` }}
+          className="relative mb-4 inline-flex items-center justify-center rounded-xl bg-white/60 p-3 shadow-sm backdrop-blur-sm ring-1 ring-white/60"
+          style={{ 
+            boxShadow: `0 0 20px ${color}20`
+          }}
         >
           <Icon className="h-8 w-8" style={{ color }} />
         </motion.div>
 
         {/* Title */}
         <h4
-          className="mb-2 font-display text-lg font-bold tracking-tight"
-          style={{ color: '#211F22' }}
+          className="mb-2 font-display text-lg font-bold tracking-tight text-gray-900"
         >
           {title}
         </h4>
 
         {/* Description */}
-        <p className="text-sm leading-relaxed" style={{ color: '#211F22', opacity: 0.7 }}>
+        <p className="text-sm leading-relaxed text-gray-600">
           {description}
         </p>
 

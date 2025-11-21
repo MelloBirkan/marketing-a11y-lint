@@ -209,18 +209,18 @@ function HowItWorksSection() {
   return (
     <PlusGridRow className="relative">
       <PlusGridItem className="py-20 sm:py-24">
-        <div className="relative mx-2 overflow-hidden rounded-4xl py-32 sm:mx-4" style={{ background: 'linear-gradient(135deg, #211F22, #7058BE, #211F22)' }} id="how-it-works">
+        <div className="relative mx-2 overflow-hidden rounded-4xl border border-white/40 bg-white/60 py-32 sm:mx-4 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:border-white/60 hover:bg-white/70" id="how-it-works">
           {/* Animated gradient overlay */}
           <div className="absolute inset-0 opacity-30">
-            <div className="absolute inset-0 animate-[gradient-shift_8s_ease-in-out_infinite]" style={{
-              background: 'linear-gradient(90deg, rgba(225, 71, 117, 0.2), rgba(225, 97, 50, 0.2), rgba(31, 140, 168, 0.2), rgba(225, 71, 117, 0.2))',
+            <div className="absolute inset-0 animate-[gradient-shift_15s_ease-in-out_infinite]" style={{
+              background: 'linear-gradient(135deg, rgba(112, 88, 190, 0.1), rgba(225, 71, 117, 0.1), rgba(31, 140, 168, 0.1))',
               backgroundSize: '200% 200%'
             }} />
           </div>
 
           <Container className="relative z-10">
-            <Subheading dark>Como Funciona</Subheading>
-            <Heading as="h3" dark className="mt-2 max-w-3xl">
+            <Subheading>Como Funciona</Subheading>
+            <Heading as="h3" className="mt-2 max-w-3xl">
               Análise de acessibilidade em{' '}
               <span style={{
                 background: 'linear-gradient(135deg, #E14775, #E16132)',
@@ -237,30 +237,38 @@ function HowItWorksSection() {
             </div>
 
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-              <div className="group text-center transition-transform hover:scale-105">
-                <div className="mb-4 flex justify-center transition-transform group-hover:animate-[float_2s_ease-in-out_infinite]">
-                  <BoltIcon className="h-16 w-16" style={{ color: '#E14775' }} />
+              <div className="group relative overflow-hidden rounded-3xl border border-white/50 bg-white/40 p-8 text-center shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 hover:shadow-xl">
+                <div className="mb-6 flex justify-center transition-transform group-hover:scale-110 duration-500">
+                  <div className="rounded-2xl bg-rose-50 p-4 ring-1 ring-rose-100">
+                    <BoltIcon className="h-10 w-10 text-rose-500" />
+                  </div>
                 </div>
-                <h4 className="font-display text-2xl font-bold text-white">1. Instale</h4>
-                <p className="mt-3 text-base text-gray-300 leading-relaxed">
-                  pip install a11y-lint e configure suas credenciais Claude
+                <h4 className="font-display text-xl font-bold text-gray-900">1. Instale</h4>
+                <p className="mt-3 text-base leading-relaxed text-gray-600">
+                  <code className="rounded bg-gray-100 px-2 py-1 font-mono text-sm text-gray-800">pip install a11y-lint</code> e configure suas credenciais Claude
                 </p>
               </div>
-              <div className="group text-center transition-transform hover:scale-105">
-                <div className="mb-4 flex justify-center transition-transform group-hover:animate-[float_2s_ease-in-out_infinite]">
-                  <MagnifyingGlassIcon className="h-16 w-16" style={{ color: '#1F8CA8' }} />
+
+              <div className="group relative overflow-hidden rounded-3xl border border-white/50 bg-white/40 p-8 text-center shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 hover:shadow-xl">
+                <div className="mb-6 flex justify-center transition-transform group-hover:scale-110 duration-500">
+                  <div className="rounded-2xl bg-cyan-50 p-4 ring-1 ring-cyan-100">
+                    <MagnifyingGlassIcon className="h-10 w-10 text-cyan-600" />
+                  </div>
                 </div>
-                <h4 className="font-display text-2xl font-bold text-white">2. Analise</h4>
-                <p className="mt-3 text-base text-gray-300 leading-relaxed">
-                  Execute a11y-lint scan ./src e aguarde 2-3 minutos
+                <h4 className="font-display text-xl font-bold text-gray-900">2. Analise</h4>
+                <p className="mt-3 text-base leading-relaxed text-gray-600">
+                  Execute <code className="rounded bg-gray-100 px-2 py-1 font-mono text-sm text-gray-800">a11y-lint scan ./src</code> e aguarde a análise
                 </p>
               </div>
-              <div className="group text-center transition-transform hover:scale-105">
-                <div className="mb-4 flex justify-center transition-transform group-hover:animate-[float_2s_ease-in-out_infinite]">
-                  <CheckCircleIcon className="h-16 w-16" style={{ color: '#269D69' }} />
+
+              <div className="group relative overflow-hidden rounded-3xl border border-white/50 bg-white/40 p-8 text-center shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/60 hover:shadow-xl">
+                <div className="mb-6 flex justify-center transition-transform group-hover:scale-110 duration-500">
+                  <div className="rounded-2xl bg-teal-50 p-4 ring-1 ring-teal-100">
+                    <CheckCircleIcon className="h-10 w-10 text-teal-600" />
+                  </div>
                 </div>
-                <h4 className="font-display text-2xl font-bold text-white">3. Corrija</h4>
-                <p className="mt-3 text-base text-gray-300 leading-relaxed">
+                <h4 className="font-display text-xl font-bold text-gray-900">3. Corrija</h4>
+                <p className="mt-3 text-base leading-relaxed text-gray-600">
                   Use os prompts de IA gerados para correções instantâneas
                 </p>
               </div>
@@ -487,33 +495,43 @@ function AcademicSection() {
           </p>
           
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
-            <div className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-md transition-all hover:shadow-xl border border-gray-100">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7058BE]/10 group-hover:bg-[#7058BE]/20 transition-colors">
-                <PresentationChartBarIcon className="h-6 w-6 text-[#7058BE]" />
-              </div>
-              <h4 className="mt-6 text-xl font-semibold text-gray-900">Poster do Projeto</h4>
-              <p className="mt-2 text-gray-600">
-                Visualização resumida da proposta, metodologia e resultados alcançados pelo a11y-lint.
-              </p>
-              <div className="mt-6">
-                <Button href="/documents/poster.pdf" target="_blank" variant="outline" className="w-full sm:w-auto gap-2 group-hover:border-[#7058BE]/30 group-hover:bg-[#7058BE]/5">
-                  Visualizar Poster <span aria-hidden="true">&rarr;</span>
-                </Button>
+            <div className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/40 p-8 shadow-lg backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/70 hover:bg-white/60 hover:shadow-2xl">
+              {/* Gradient glow effect */}
+              <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-30" style={{ background: 'radial-gradient(circle, rgba(112, 88, 190, 0.6), transparent)' }} />
+              
+              <div className="relative z-10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 shadow-sm ring-1 ring-[#7058BE]/20 backdrop-blur-sm transition-all group-hover:scale-110 group-hover:shadow-lg" style={{ boxShadow: '0 0 20px rgba(112, 88, 190, 0.15)' }}>
+                  <PresentationChartBarIcon className="h-6 w-6 text-[#7058BE]" />
+                </div>
+                <h4 className="mt-6 text-xl font-bold text-gray-900 transition-colors group-hover:text-[#7058BE]">Poster do Projeto</h4>
+                <p className="mt-2 leading-relaxed text-gray-600">
+                  Visualização resumida da proposta, metodologia e resultados alcançados pelo a11y-lint.
+                </p>
+                <div className="mt-6">
+                  <Button href="/documents/poster.pdf" target="_blank" variant="outline" className="w-full sm:w-auto gap-2 group-hover:border-[#7058BE]/30 group-hover:bg-[#7058BE]/5">
+                    Visualizar Poster <span aria-hidden="true">&rarr;</span>
+                  </Button>
+                </div>
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-md transition-all hover:shadow-xl border border-gray-100">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E14775]/10 group-hover:bg-[#E14775]/20 transition-colors">
-                <DocumentTextIcon className="h-6 w-6 text-[#E14775]" />
-              </div>
-              <h4 className="mt-6 text-xl font-semibold text-gray-900">Artigo Completo</h4>
-              <p className="mt-2 text-gray-600">
-                Texto integral com fundamentação teórica, detalhes da implementação e análise de resultados.
-              </p>
-              <div className="mt-6">
-                <Button href="/documents/article.pdf" target="_blank" variant="outline" className="w-full sm:w-auto gap-2 group-hover:border-[#E14775]/30 group-hover:bg-[#E14775]/5">
-                  Ler Artigo <span aria-hidden="true">&rarr;</span>
-                </Button>
+            <div className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/40 p-8 shadow-lg backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-white/70 hover:bg-white/60 hover:shadow-2xl">
+              {/* Gradient glow effect */}
+              <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-30" style={{ background: 'radial-gradient(circle, rgba(225, 71, 117, 0.6), transparent)' }} />
+              
+              <div className="relative z-10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/60 shadow-sm ring-1 ring-[#E14775]/20 backdrop-blur-sm transition-all group-hover:scale-110 group-hover:shadow-lg" style={{ boxShadow: '0 0 20px rgba(225, 71, 117, 0.15)' }}>
+                  <DocumentTextIcon className="h-6 w-6 text-[#E14775]" />
+                </div>
+                <h4 className="mt-6 text-xl font-bold text-gray-900 transition-colors group-hover:text-[#E14775]">Artigo Completo</h4>
+                <p className="mt-2 leading-relaxed text-gray-600">
+                  Texto integral com fundamentação teórica, detalhes da implementação e análise de resultados.
+                </p>
+                <div className="mt-6">
+                  <Button href="/documents/article.pdf" target="_blank" variant="outline" className="w-full sm:w-auto gap-2 group-hover:border-[#E14775]/30 group-hover:bg-[#E14775]/5">
+                    Ler Artigo <span aria-hidden="true">&rarr;</span>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

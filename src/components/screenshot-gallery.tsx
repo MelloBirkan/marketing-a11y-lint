@@ -85,11 +85,7 @@ export function ScreenshotGallery() {
                   {screenshot.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="rounded-full px-3 py-1 text-xs font-semibold backdrop-blur-sm lg:text-sm"
-                      style={{
-                        backgroundColor: 'rgba(112, 88, 190, 0.8)',
-                        color: '#FAF4F3',
-                      }}
+                      className="rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md ring-1 ring-white/10 lg:text-sm"
                     >
                       {tag}
                     </span>
@@ -98,11 +94,8 @@ export function ScreenshotGallery() {
               </div>
 
               {/* Corner Badge */}
-              <div className="absolute right-4 top-4 rounded-full px-3 py-1.5 text-xs font-bold backdrop-blur-md transition-all group-hover:scale-110 lg:px-4 lg:py-2 lg:text-sm"
-                style={{
-                  backgroundColor: 'rgba(225, 71, 117, 0.9)',
-                  color: '#FAF4F3',
-                }}
+              <div 
+                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/30 text-sm font-bold text-gray-900 backdrop-blur-md shadow-lg ring-1 ring-white/20 transition-all group-hover:scale-110 lg:h-12 lg:w-12 lg:text-base"
               >
                 {index + 1}
               </div>
