@@ -1,4 +1,5 @@
-import { clsx } from 'clsx'
+import clsx from 'clsx'
+import React, { forwardRef } from 'react'
 
 type HeadingProps = {
   as?: 'div' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -54,3 +55,15 @@ export function Lead({
     />
   )
 }
+
+export const Text = forwardRef<HTMLParagraphElement, React.ComponentPropsWithoutRef<'p'>>(
+  function Text({ className, ...props }, ref) {
+    return (
+      <p
+        ref={ref}
+        className={clsx(className, 'text-base/6 text-zinc-600 sm:text-sm/6 dark:text-zinc-300')}
+        {...props}
+      />
+    )
+  }
+)
