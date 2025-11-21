@@ -22,10 +22,17 @@ const variants = {
     'text-sm font-medium whitespace-nowrap text-gray-950',
     'data-disabled:bg-transparent data-disabled:opacity-40 data-hover:bg-gray-50',
   ),
+  plain: clsx(
+    'inline-flex items-center justify-center px-2 py-[calc(--spacing(1.5)-1px)]',
+    'rounded-lg border border-transparent',
+    'text-sm font-medium whitespace-nowrap text-gray-950',
+    'data-disabled:opacity-40 data-hover:bg-gray-950/5',
+  ),
 }
 
 type ButtonProps = {
   variant?: keyof typeof variants
+  plain?: boolean
 } & (
   | React.ComponentPropsWithoutRef<typeof Link>
   | (Headless.ButtonProps & { href?: undefined })
@@ -33,9 +40,14 @@ type ButtonProps = {
 
 export function Button({
   variant = 'primary',
+  plain,
   className,
   ...props
 }: ButtonProps) {
+  if (plain) {
+    variant = 'plain'
+  }
+
   className = clsx(className, variants[variant])
 
   if (typeof props.href === 'undefined') {
@@ -43,4 +55,16 @@ export function Button({
   }
 
   return <Link {...props} className={className} />
+}
+
+export function TouchTarget({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <span
+        className="absolute left-1/2 top-1/2 size-[max(100%,2.75rem)] -translate-x-1/2 -translate-y-1/2 [@media(pointer:fine)]:hidden"
+        aria-hidden="true"
+      />
+      {children}
+    </>
+  )
 }

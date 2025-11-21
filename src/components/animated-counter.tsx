@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useSpring, useTransform } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { type CSSProperties, useEffect, useState } from 'react'
 
 interface AnimatedCounterProps {
   value: number
@@ -9,6 +9,7 @@ interface AnimatedCounterProps {
   prefix?: string
   className?: string
   duration?: number
+  style?: CSSProperties
 }
 
 export function AnimatedCounter({
@@ -17,6 +18,7 @@ export function AnimatedCounter({
   prefix = '',
   className = '',
   duration = 2,
+  style,
 }: AnimatedCounterProps) {
   const [hasAnimated, setHasAnimated] = useState(false)
   const spring = useSpring(0, { duration: duration * 1000 })
@@ -41,6 +43,7 @@ export function AnimatedCounter({
       onViewportEnter={() => setHasAnimated(true)}
       viewport={{ once: true, margin: '-100px' }}
       className={className}
+      style={style}
     >
       {prefix}
       <motion.span>{display}</motion.span>

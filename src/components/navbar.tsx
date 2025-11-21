@@ -1,11 +1,13 @@
 'use client'
 
 import {
+  Button,
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
 } from '@headlessui/react'
 import { Bars2Icon } from '@heroicons/react/24/solid'
+import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import { Link } from './link'
 import { Logo } from './logo'
@@ -72,6 +74,25 @@ function MobileNav() {
         <div className="absolute inset-x-0 top-2 border-t border-black/5" />
       </div>
     </DisclosurePanel>
+  )
+}
+
+export function NavbarItem({
+  className,
+  ...props
+}: { className?: string } & (
+  | React.ComponentPropsWithoutRef<typeof Link>
+  | (React.ComponentPropsWithoutRef<typeof Button> & { href?: undefined })
+)) {
+  let classes = clsx(
+    className,
+    'relative flex min-h-0 items-center gap-3 rounded-lg p-2 text-left text-sm/6 font-medium text-zinc-950 data-hover:bg-zinc-950/5 data-disabled:opacity-50 sm:py-2 sm:px-3 dark:text-white dark:data-hover:bg-white/5'
+  )
+
+  return typeof props.href === 'undefined' ? (
+    <Button {...props} className={classes} />
+  ) : (
+    <Link {...props} className={classes} />
   )
 }
 
