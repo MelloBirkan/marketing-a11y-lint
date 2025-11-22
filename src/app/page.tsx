@@ -55,7 +55,7 @@ function Hero() {
         <Navbar />
         <div className="flex min-h-[calc(100vh-8rem)] flex-col justify-center pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
           <div className="space-y-8">
-            <h1 className="font-display text-6xl/[0.95] font-bold tracking-tight text-balance sm:text-7xl/[0.9] md:text-8xl/[0.85] lg:text-9xl/[0.85]" style={{ color: '#211F22' }}>
+            <h1 className="font-display text-5xl/[0.95] font-bold tracking-tight text-balance sm:text-7xl/[0.9] md:text-8xl/[0.85] lg:text-9xl/[0.85]" style={{ color: '#211F22' }}>
               Corrija problemas de{' '}
               <AnimatedGradientText>
                 acessibilidade
@@ -87,7 +87,7 @@ function Hero() {
 function ProblemSection() {
   return (
     <PlusGridRow className="relative">
-      <PlusGridItem className="py-20 sm:py-24">
+      <PlusGridItem className="py-16 sm:py-24">
         <Container>
           <Subheading>O Problema</Subheading>
           <Heading as="h2" className="mt-2 max-w-3xl">
@@ -138,7 +138,7 @@ function ProblemSection() {
 function BentoSection() {
   return (
     <PlusGridRow className="relative">
-      <PlusGridItem className="py-20 sm:py-24">
+      <PlusGridItem className="py-16 sm:py-24">
         <Container id="features">
           <Subheading>Recursos</Subheading>
           <Heading as="h3" className="mt-2 max-w-3xl">
@@ -208,7 +208,7 @@ function BentoSection() {
 function HowItWorksSection() {
   return (
     <PlusGridRow className="relative">
-      <PlusGridItem className="py-20 sm:py-24">
+      <PlusGridItem className="py-16 sm:py-24">
         <div className="relative mx-2 overflow-hidden rounded-4xl border border-white/40 bg-white/60 py-32 sm:mx-4 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:border-white/60 hover:bg-white/70" id="how-it-works">
           {/* Animated gradient overlay */}
           <div className="absolute inset-0 opacity-30">
@@ -245,7 +245,7 @@ function HowItWorksSection() {
                 </div>
                 <h4 className="font-display text-xl font-bold text-gray-900">1. Instale</h4>
                 <p className="mt-3 text-base leading-relaxed text-gray-600">
-                  <code className="rounded bg-gray-100 px-2 py-1 font-mono text-sm text-gray-800">pip install a11y-lint</code> e configure suas credenciais Claude
+                  Em desenvolvimento. Mostraremos como instalar e configurar suas credenciais Claude em breve.
                 </p>
               </div>
 
@@ -283,7 +283,7 @@ function HowItWorksSection() {
 function ScreenshotsSection() {
   return (
     <PlusGridRow className="relative">
-      <PlusGridItem className="py-20 sm:py-24">
+      <PlusGridItem className="py-16 sm:py-24">
         <Container>
           <Subheading>Interface Intuitiva</Subheading>
           <Heading as="h3" className="mt-2 max-w-3xl">
@@ -313,7 +313,7 @@ function ScreenshotsSection() {
 function DemoSection() {
   return (
     <PlusGridRow className="relative">
-      <PlusGridItem className="py-20 sm:py-24">
+      <PlusGridItem className="py-16 sm:py-24">
         <Container id="demo">
           {/* Glassmorphic container for Demo */}
           <div className="relative overflow-hidden rounded-4xl border border-white/40 bg-white/60 p-8 sm:p-12 shadow-2xl backdrop-blur-xl transition-all duration-500 hover:border-white/60 hover:bg-white/70 hover:shadow-[0_20px_80px_-20px_rgba(31,140,168,0.3)]">
@@ -359,7 +359,7 @@ function DemoSection() {
   src={product.image}
   alt={product.name}
   className="w-full"
-/>`}
+  />`}
                 />
 
                 <CodeExample
@@ -445,7 +445,7 @@ function DemoSection() {
 function MetricsSection() {
   return (
     <PlusGridRow className="relative">
-      <PlusGridItem className="py-20 sm:py-24">
+      <PlusGridItem className="py-16 sm:py-24">
         <Container>
           <Subheading>Resultados Comprovados</Subheading>
           <Heading as="h3" className="mt-2 max-w-3xl">
@@ -463,7 +463,7 @@ function MetricsSection() {
 function ArchitectureSection() {
   return (
     <PlusGridRow className="relative">
-      <PlusGridItem className="py-20 sm:py-24">
+      <PlusGridItem className="py-16 sm:py-24">
         <Container>
           <Subheading>Arquitetura</Subheading>
           <Heading as="h3" className="mt-2 max-w-3xl">
@@ -484,7 +484,7 @@ function ArchitectureSection() {
 function AcademicSection() {
   return (
     <PlusGridRow className="relative">
-      <PlusGridItem className="py-20 sm:py-24">
+      <PlusGridItem className="py-16 sm:py-24">
         <Container>
           <Subheading>Acadêmico</Subheading>
           <Heading as="h3" className="mt-2 max-w-3xl">
@@ -544,7 +544,7 @@ function AcademicSection() {
 function CTASection() {
   return (
     <PlusGridRow className="relative">
-      <PlusGridItem className="py-20 sm:py-24">
+      <PlusGridItem className="py-16 sm:py-24">
         <div className="relative mx-2 overflow-hidden rounded-4xl py-32 sm:mx-4 text-center" 
              style={{ background: 'linear-gradient(135deg, var(--color-dark), var(--color-purple), var(--color-dark))' }}>
           
@@ -578,11 +578,9 @@ function CTASection() {
               <div className="relative z-10">
                 <Heading as="h2" dark className="mx-auto max-w-3xl !text-5xl sm:!text-6xl md:!text-7xl">
                   Pronto para melhorar a{' '}
-                  <span className="block mt-2" style={{
-                    background: 'linear-gradient(135deg, var(--color-amber), var(--color-teal))',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
+                  <span className="block mt-2 text-white" style={{
+                    textShadow: '0 0 30px rgba(255, 255, 255, 0.4), 0 0 60px rgba(255, 255, 255, 0.2)',
+                    filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))'
                   }}>
                     acessibilidade?
                   </span>

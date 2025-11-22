@@ -131,7 +131,7 @@ export function Footer() {
                 </div>
               </div>
             </PlusGridRow>
-            <PlusGridRow className="flex justify-between">
+            <PlusGridRow className="flex flex-col justify-between sm:flex-row">
               <div>
                 <PlusGridItem className="py-3">
                   <Copyright />

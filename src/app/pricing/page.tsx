@@ -121,7 +121,7 @@ function Header() {
 
 function PricingCards() {
   return (
-    <div className="relative py-24">
+    <div className="relative py-16 sm:py-24">
       <Gradient className="absolute inset-x-2 top-48 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
       <Container className="relative">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -176,7 +176,7 @@ function PricingTable({
   selectedTier: (typeof tiers)[number]
 }) {
   return (
-    <Container className="py-24">
+    <Container className="py-16 sm:py-24">
       <table className="w-full text-left">
         <caption className="sr-only">Pricing plan comparison</caption>
         <colgroup>
@@ -367,7 +367,7 @@ function PlusIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function Testimonial() {
   return (
-    <div className="mx-2 my-24 rounded-4xl bg-gray-900 bg-[url(/dot-texture.svg)] pt-72 pb-24 lg:pt-36">
+    <div className="mx-2 my-16 sm:my-24 rounded-4xl bg-gray-900 bg-[url(/dot-texture.svg)] pt-72 pb-24 lg:pt-36">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-[384px_1fr_1fr]">
           <div className="-mt-96 lg:-mt-52">
