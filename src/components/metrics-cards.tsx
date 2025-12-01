@@ -58,25 +58,25 @@ export function MetricsCards() {
         value={69.2}
         suffix="%"
         decimals={1}
-        label="Cobertura de detecção de problemas"
+        label="Taxa de detecção de problemas em testes"
         index={0}
       />
       <MetricCard
         value={0.30}
         prefix="$"
         decimals={2}
-        label="Custo por análise (30 arquivos)"
+        label="Custo médio por análise completa"
         index={1}
       />
       <MetricCard
         value={30}
         suffix="+"
-        label="Regras de acessibilidade"
+        label="Regras WCAG e HIG validadas"
         index={2}
       />
       <MetricCard
         value={3}
-        label="Minutos por análise"
+        label="Minutos de análise (projeto médio)"
         index={3}
       />
     </div>

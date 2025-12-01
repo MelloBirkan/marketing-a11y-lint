@@ -41,10 +41,6 @@ export function StatCard({
 
       {/* Content */}
       <div className="relative z-10">
-        <div className="mb-4 inline-flex rounded-xl bg-white/50 p-3 shadow-sm ring-1 ring-black/5 backdrop-blur-sm">
-           <div className="h-2 w-2 rounded-full animate-pulse" style={{ backgroundColor: color }} />
-        </div>
-        
         <AnimatedCounter
           value={value}
           suffix={suffix}
@@ -52,14 +48,10 @@ export function StatCard({
           className={`mb-3 block font-display text-6xl font-bold tracking-tight`}
           style={{ color }}
         />
-        
-        <div className={`mb-2 text-sm font-bold uppercase tracking-wider`} style={{ color }}>
-          {label}
-        </div>
-        
-        <p className="text-sm text-gray-600 leading-relaxed font-medium">
+
+        <div className={`text-sm font-bold uppercase tracking-wider`} style={{ color }}>
           {description}
-        </p>
+        </div>
       </div>
 
       {/* Decorative element */}
