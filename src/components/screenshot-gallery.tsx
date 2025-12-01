@@ -19,18 +19,6 @@ const screenshots: Screenshot[] = [
     tags: ['Scanning', 'AI Agent', 'Real-time'],
   },
   {
-    src: '/screenshots/darkmode.png',
-    title: 'Interface em Modo Escuro',
-    description: 'Menu principal com tema dark para trabalho noturno.',
-    tags: ['UI', 'Dark Mode'],
-  },
-  {
-    src: '/screenshots/lightmode.png',
-    title: 'Interface em Modo Claro',
-    description: 'Menu principal com tema light, design limpo e acessível.',
-    tags: ['UI', 'Light Mode'],
-  },
-  {
     src: '/screenshots/selectDirectory.png',
     title: 'Seletor de Diretório',
     description: 'Interface intuitiva de navegação para selecionar projetos.',
@@ -42,10 +30,6 @@ export function ScreenshotGallery() {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
       {screenshots.map((screenshot, index) => {
-        // First and last images take full width, middle ones are in grid
-        const isFullWidth = index === 0 || index === 3
-        const isMenuImage = index === 1 || index === 2
-
         return (
           <motion.div
             key={index}
@@ -53,20 +37,16 @@ export function ScreenshotGallery() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className={`group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 p-1 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl ${
-              isFullWidth ? 'md:col-span-2' : ''
-            }`}
+            className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 to-gray-800 p-1 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:shadow-3xl"
           >
             {/* Image Container */}
             <div className="relative overflow-hidden rounded-3xl bg-gray-900">
               <Image
                 src={screenshot.src}
                 alt={screenshot.title}
-                width={isMenuImage ? 800 : 1600}
-                height={isMenuImage ? 1200 : 900}
-                className={`h-auto w-full transition-transform duration-700 group-hover:scale-105 ${
-                  isMenuImage ? 'max-h-[600px] object-contain object-top' : ''
-                }`}
+                width={1600}
+                height={900}
+                className="h-auto w-full transition-transform duration-700 group-hover:scale-105"
                 priority={index < 2}
               />
 
