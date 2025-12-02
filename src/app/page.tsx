@@ -6,7 +6,6 @@ import { Footer } from '@/components/footer'
 import { PlusGrid, PlusGridItem, PlusGridRow } from '@/components/plus-grid'
 import { MetricsCards } from '@/components/metrics-cards'
 import { Navbar } from '@/components/navbar'
-import { SampleReport } from '@/components/sample-report'
 import { TerminalDemo } from '@/components/terminal-demo'
 import { Heading, Subheading } from '@/components/text'
 import { MorphingBlob } from '@/components/morphing-blob'
@@ -101,7 +100,6 @@ function ProblemSection() {
             <StatCard
               value={2.5}
               suffix="B+"
-              label="Impacto Global"
               description="Pessoas dependem de tecnologias assistivas"
               color="#7058BE"
               delay={0}
@@ -109,7 +107,6 @@ function ProblemSection() {
             <StatCard
               value={31.3}
               suffix="%"
-              label="Cobertura Limitada"
               description="Cobertura de ferramentas tradicionais"
               color="#E14775"
               delay={0.2}
@@ -117,7 +114,6 @@ function ProblemSection() {
             <StatCard
               value={97}
               suffix="%"
-              label="Problema Universal"
               description="Sites com erros de acessibilidade"
               color="#E16132"
               delay={0.4}
@@ -335,7 +331,7 @@ function DemoSection() {
 
           <p className="mt-6 max-w-2xl text-base/7" style={{ color: '#211F22', opacity: 0.75 }}>
             Explore os exemplos abaixo para entender como a ferramenta identifica problemas de acessibilidade.
-            Cada card mostra o código com problema e, ao clicar em <strong>"Corrigido"</strong>, você visualiza a versão correta com as melhorias aplicadas.
+            Cada card mostra o código com problema e, ao clicar em <strong>&quot;Corrigido&quot;</strong>, você visualiza a versão correta com as melhorias aplicadas.
           </p>
 
           <div className="mt-12 space-y-8">

@@ -7,7 +7,6 @@ interface StatCardProps {
   value: number
   suffix?: string
   prefix?: string
-  label: string
   description: string
   color: string
   delay?: number
@@ -17,7 +16,6 @@ export function StatCard({
   value,
   suffix = '',
   prefix = '',
-  label,
   description,
   color,
   delay = 0,
