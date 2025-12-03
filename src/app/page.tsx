@@ -387,7 +387,7 @@ function MetricsSection() {
     <PlusGridRow className="relative">
       <PlusGridItem className="py-16 sm:py-24">
         <Container>
-          <Subheading>Resultados Comprovados</Subheading>
+          <Subheading>Resultados Parciais</Subheading>
           <Heading as="h4" className="mt-2 max-w-3xl">
             Métricas de{' '}
             <span style={{
@@ -400,7 +400,7 @@ function MetricsSection() {
             </span>
           </Heading>
           <p className="mt-6 max-w-3xl text-lg/8" style={{ color: '#211F22', opacity: 0.75 }}>
-            Resultados obtidos em testes com projetos reais, demonstrando a capacidade de detecção e análise do sistema.
+            Testes parciais do MVP demonstraram estas métricas em projetos reais. Validações adicionais com especialistas em acessibilidade serão realizadas no TCC2.
           </p>
           <div className="mt-16">
             <MetricsCards />
