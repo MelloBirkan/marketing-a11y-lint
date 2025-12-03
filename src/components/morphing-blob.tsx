@@ -31,6 +31,14 @@ export function MorphingBlob({ className = '', color, delay = 0 }: MorphingBlobP
         background: color,
         filter: 'blur(80px)',
         opacity: 0.6,
+        // Safari-specific fixes for blur animation glitches
+        WebkitBackfaceVisibility: 'hidden',
+        backfaceVisibility: 'hidden',
+        WebkitPerspective: 1000,
+        perspective: 1000,
+        WebkitTransform: 'translate3d(0, 0, 0)',
+        transform: 'translate3d(0, 0, 0)',
+        willChange: 'transform, border-radius',
       }}
     />
   )

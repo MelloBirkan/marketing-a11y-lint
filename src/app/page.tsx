@@ -139,7 +139,7 @@ function HowItWorksSection() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>
-              Em breve:
+              Prévia do fluxo:
             </span>
             {' '}Análise de acessibilidade em 3 passos simples
           </Heading>
@@ -400,7 +400,7 @@ function MetricsSection() {
             </span>
           </Heading>
           <p className="mt-6 max-w-3xl text-lg/8" style={{ color: '#211F22', opacity: 0.75 }}>
-            Testes parciais do MVP demonstraram estas métricas em projetos reais. Validações adicionais com especialistas em acessibilidade serão realizadas no TCC2.
+            Testes parciais do MVP demonstraram essas métricas em projetos reais. No TCC2, serão realizados testes adicionais com métricas de validação de fato com especialistas em acessibilidade.
           </p>
           <div className="mt-16">
             <MetricsCards />
@@ -590,11 +590,11 @@ export default function Home() {
       <main>
         <PlusGrid>
           <ProblemSection />
-          <MetricsSection />
           <ScreenshotsSection />
           <DemoSection />
           <HowItWorksSection />
           <ArchitectureSection />
+          <MetricsSection />
           <AcademicSection />
           <CTASection />
         </PlusGrid>
